@@ -1,6 +1,4 @@
----
-layout: null
----
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -301,9 +299,27 @@ layout: null
             <div class="toc-label">Contents</div>
             <ul>
                 <li><a class="toc-link" href="#about">Bio</a></li>
-                {% for sec in site.data.cv_content.sections %}
-                    <li><a class="toc-link" href="#{{ sec.title|replace(' ', '-') }}">{{ sec.title }}</a></li>
-                {% endfor %}
+                
+                    <li><a class="toc-link" href="#Appointments">Appointments</a></li>
+                
+                    <li><a class="toc-link" href="#Education">Education</a></li>
+                
+                    <li><a class="toc-link" href="#Research-Funding">Research Funding</a></li>
+                
+                    <li><a class="toc-link" href="#Teaching">Teaching</a></li>
+                
+                    <li><a class="toc-link" href="#Former-PhD-Students">Former PhD Students</a></li>
+                
+                    <li><a class="toc-link" href="#Awards-and-Distinctions">Awards and Distinctions</a></li>
+                
+                    <li><a class="toc-link" href="#Invited-Talks-and-Seminars">Invited Talks and Seminars</a></li>
+                
+                    <li><a class="toc-link" href="#Conference-and-Workshop-Organization">Conference and Workshop Organization</a></li>
+                
+                    <li><a class="toc-link" href="#Editorial-Service-and-Reviewing">Editorial Service and Reviewing</a></li>
+                
+                    <li><a class="toc-link" href="#Departmental-Service">Departmental Service</a></li>
+                
                 <li>
                     <a class="pub-toc-toggle" href="#publications" onclick="document.body.classList.toggle('show-pub-toc');">Publications</a>
                     <ul class="pub-subtoc">
@@ -324,233 +340,1449 @@ layout: null
     <main>
         <section id="about">
             <div class="bio">
-                {{ site.data.cv_content.bio | safe }}
+                My research focuses on reconfigurable computing and electronic design automation. I develop reconfigurable and domain-specific architectures and methodologies to accelerate physical design flows, including mapping, placement, and routing. In hardware security, I investigate fabric vulnerabilities to side-channel and fault-injection attacks, develop novel on-chip sensors, and leverage machine learning for side-channel analysis. Beyond research, I am committed to open-source artifacts that make these advances accessible and reproducible, and to dedicated teaching that has been recognized through institutional awards.
             </div>
         </section>
 
-        {% for sec in site.data.cv_content.sections %}
-        <section id="{{ sec.title|replace(' ', '-') }}">
-            <h2>{{ sec.title }}</h2>
-            {% for item in sec.entries %}
+        
+        <section id="Appointments">
+            <h2>Appointments</h2>
+            
             <div class="cv-item">
                 <div>
-                    <span class="cv-role">{{ item.role }}</span>{% if item.inst %}<span class="cv-inst">, {{ item.inst }}</span>{% endif %}{% if item.date %}<span class="cv-date"> ({{ item.date }})</span>{% endif %}
+                    <span class="cv-role">Scientist</span><span class="cv-inst">, School of Computer and Communication Sciences, EPFL, Switzerland</span><span class="cv-date"> (2016–present)</span>
                 </div>
-                {% if item.desc %}<div class="cv-desc">{{ item.desc | replace('<p>, ', '<p>') | replace('<p>,', '<p>') | safe }}</div>{% endif %}
+                
             </div>
-            {% endfor %}
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Visiting Professor</span><span class="cv-inst">, University of Toronto, Canada</span><span class="cv-date"> (Jul 2023–Jan 2024)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">External Lecturer</span><span class="cv-inst">, School of Computer and Communication Sciences, EPFL, Switzerland</span><span class="cv-date"> (2014–2016)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Scientific Collaborator</span><span class="cv-inst">, HEIG-VD, Switzerland</span><span class="cv-date"> (2013–2016)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Embedded Systems Architect</span><span class="cv-inst">, Mihailo Pupin Institute, Serbia</span><span class="cv-date"> (2007–2013)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Intern</span><span class="cv-inst">, ELSYS Eastern Europe Electronic Design Center, Serbia</span><span class="cv-date"> (Jun–Aug 2006)</span>
+                </div>
+                
+            </div>
+            
         </section>
-        {% endfor %}
+        
+        <section id="Education">
+            <h2>Education</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">PhD in Electrical Engineering</span><span class="cv-inst">, School of Electrical Engineering, University of Belgrade, Serbia. Thesis: A Method for Designing Domain-Specific Reconfigurable Arrays <a href="https://hdl.handle.net/21.15107/rcub_nardus_6993" class="cv-link l-thesis">Thesis</a><br><strong>Advisor:</strong> Lazar Saranovac</span><span class="cv-date"> (2008–2013)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Dipl.-Ing. in Electronics and Telecommunication</span><span class="cv-inst">, School of Electrical Engineering, University of Belgrade, Serbia; Completed a five-year program early. GPA: 9.9/10</span><span class="cv-date"> (2002–2006)</span>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="Research-Funding">
+            <h2>Research Funding</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Swiss National Science Foundation</span><span class="cv-inst">, Principal Investigator</span><span class="cv-date"> (2019–present)</span>
+                </div>
+                <div class="cv-desc">Secure FPGAs in the Cloud, ~535 kCHF <a href="https://data.snf.ch/grants/grant/182428" class="cv-link l-link">Link</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Swiss National Science Foundation</span><span class="cv-inst">, Principal Investigator</span><span class="cv-date"> (2023–2024)</span>
+                </div>
+                <div class="cv-desc">Towards Next Generation FPGA Architecture and CAD, ~28 kCHF<a href="https://data.snf.ch/grants/grant/218864" class="cv-link l-link">Link</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">CYD Doctoral Fellowship</span><span class="cv-inst">, awarded to my former PhD student Dina G. Mahmoud</span><span class="cv-date"> (2020–2024)</span>
+                </div>
+                <div class="cv-desc">ADHeS: Attacks and Defences on FPGA-CPU Heterogeneous Systems, ~295k CHF <a href="https://actu.epfl.ch/news/dina-g-mahmoud-awarded-cyd-doctoral-fellowship/" class="cv-link l-link">Link</a></div>
+            </div>
+            
+        </section>
+        
+        <section id="Teaching">
+            <h2>Teaching</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Fundamentals of Digital Systems</span><span class="cv-inst">, EPFL, BSc, 7 ECTS</span><span class="cv-date"> (2024–present)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Information, Computation and Communication</span><span class="cv-inst">, EPFL, BSc, 6 ECTS</span><span class="cv-date"> (2019–present)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Computer Architecture 1</span><span class="cv-inst">, EPFL, BSc, 4 ECTS</span><span class="cv-date"> (2016–2023)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Project in System Programming</span><span class="cv-inst">, EPFL, BSc, 2 ECTS</span><span class="cv-date"> (2019–2020)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Programming</span><span class="cv-inst">, EPFL, BSc, 3 ECTS</span><span class="cv-date"> (2013–2018)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Programming 2</span><span class="cv-inst">, HEIG-VD, BSc, 8 ECTS</span><span class="cv-date"> (2016)</span>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="Former-PhD-Students">
+            <h2>Former PhD Students</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Dina G. Mahmoud</span><span class="cv-inst">, PhD Thesis</span><span class="cv-date"> (2024)</span>
+                </div>
+                <div class="cv-desc">Electrical-Level Fault-Injection Attacks on FPGA-Based Systems. CYD PhD Thesis Award <a href="https://www.ar.admin.ch/en/cyd-campus-5-jaehriges-en" class="cv-link l-award">Award</a><a href="https://infoscience.epfl.ch/handle/20.500.14299/240711" class="cv-link l-thesis">Thesis</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Ognjen Glamočanin</span><span class="cv-inst">, PhD Thesis</span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Evaluating, Exploiting, and Hiding Power Side-Channel Leakage of Remote FPGAs <a href="https://doi.org/10.5075/epfl-thesis-9918" class="cv-link l-thesis">Thesis</a></div>
+            </div>
+            
+        </section>
+        
+        <section id="Awards-and-Distinctions">
+            <h2>Awards and Distinctions</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award (Runner Up)</span><span class="cv-inst">, FPGA</span><span class="cv-date"> (2026)</span>
+                </div>
+                <div class="cv-desc">Pirayadi et al., Out with LSQs: Custom Circuits for Memory Access Reordering in Dynamic HLS <a href="https://doi.org/10.1145/3748173.3779204" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Teaching Award</span><span class="cv-inst">, EPFL</span><span class="cv-date"> (2025)</span>
+                </div>
+                <div class="cv-desc">Best teacher in the Computer and the Communication Sciences Sections <a href="https://www.epfl.ch/education/teaching/index-html/teaching-award-for-each-section/" class="cv-link l-award">Award</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award</span><span class="cv-inst">, FCCM</span><span class="cv-date"> (2025)</span>
+                </div>
+                <div class="cv-desc">Shrivastava et al., "Guaranteed Yet Hard to Find: Uncovering FPGA Routing Convergence Paradox"<a href="https://doi.org/10.1109/FCCM62733.2025.00060" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Distinguished Reviewer Award</span><span class="cv-inst">, DATE</span><span class="cv-date"> (2025)</span>
+                </div>
+                <div class="cv-desc">Outstanding Reviewer Awards - A Track <a href="https://date25.date-conference.com/awards" class="cv-link l-award">Award</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">CYD Best PhD Thesis Award</span><span class="cv-inst">, Awarded to my former PhD student Dina G. Mahmoud <a href="https://www.ar.admin.ch/en/cyd-campus-5-jaehriges-en" class="cv-link l-award">Award</a></span><span class="cv-date"> (2024)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award Nomination</span><span class="cv-inst">, FPT</span><span class="cv-date"> (2024)</span>
+                </div>
+                <div class="cv-desc">Košar et al., Parallel FPGA Routing with On-The-Fly Net Decomposition, <a href="https://doi.org/10.1109/ICFPT64416.2024.11113423" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award Nomination</span><span class="cv-inst">, FPT</span><span class="cv-date"> (2024)</span>
+                </div>
+                <div class="cv-desc">Singer et al., Multiqueue-Based FPGA Routing: Relaxed A* Priority Ordering for Improved Parallelism, <a href="https://doi.org/10.1109/ICFPT64416.2024.11113444" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award Nomination</span><span class="cv-inst">, DDECS</span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Glamočanin et al., Active Wire Fences for Multitenant FPGAs <a href="https://doi.org/10.1109/DDECS57882.2023.10138941" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award Nomination</span><span class="cv-inst">, FPT</span><span class="cv-date"> (2019)</span>
+                </div>
+                <div class="cv-desc">Seifoori et al., A Machine Learning Approach for Power Gating the FPGA Routing Network <a href="https://doi.org/10.1109/ICFPT47387.2019.00010" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">IEEE Senior Member</span><span class="cv-date"> (2019)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Young Scientist Award</span><span class="cv-inst">, ICLP</span><span class="cv-date"> (2016)</span>
+                </div>
+                <div class="cv-desc">Stojilović et al., Lightning Location Systems and Interstroke Intervals: Effects of Imperfect Detection Efficiency, <a href="https://doi.org/10.1109/ICLP38416.2016" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Best Paper Award</span><span class="cv-inst">, EMC Europe</span><span class="cv-date"> (2016)</span>
+                </div>
+                <div class="cv-desc">Van de Beek et al., Protection strategy against IEMI for wireless communication infrastructures <a href="https://doi.org/10.1109/EMCEurope.2016.7739189" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Teaching Award for Teaching Excellence</span><span class="cv-inst">, School of Computer and Communication Sciences, EPFL</span><span class="cv-date"> (2015)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Young Author Best Paper Award</span><span class="cv-inst">, TELFOR</span><span class="cv-date"> (2012)</span>
+                </div>
+                <div class="cv-desc">Stojilović et al., Design of antenna system for short-range wireless sensor network <a href="https://doi.org/10.1109/TELFOR.2011.6143705" class="cv-link l-doi">DOI</a></div>
+            </div>
+            
+        </section>
+        
+        <section id="Invited-Talks-and-Seminars">
+            <h2>Invited Talks and Seminars</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Dagstuhl Seminar 22412</span><span class="cv-inst">, Intelligent Security: Is "AI for Cybersecurity" a Blessing or a Curse, Schloss Dagstuhl, Germany</span><span class="cv-date"> (2022)</span>
+                </div>
+                <div class="cv-desc">Organizers: Nele Mentens, Stjepan Picek, and Ahmad-Reza Sadeghi</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Navigating Hardware Security Challenges in Reconfigurable Cloud Computing</span><span class="cv-inst">, Women in Circuits Workshop on Hardware Security (collocated with ESSERC), Bruges, Belgium</span><span class="cv-date"> (2024)</span>
+                </div>
+                <div class="cv-desc">Organizers: Ingrid Verbauwhede and Nele Mentens</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Speeding Up Commercial FPGA Routing by Decoupling and Mitigating the Intra-CLB Bottleneck</span><span class="cv-inst">, University of Toronto, Canada</span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Host: Jason Anderson</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Multi-Stage Routing for Next-Gen Commercial FPGAs</span><span class="cv-inst">, ACM/IEEE International Workshop on System-Level Interconnect Pathfinding (SLIP). San Francisco, USA</span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Organizers: Mustafa Badaroglu, Shantanu Dutt, and Pascal Vivet</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Remote FPGA-Driven Electrical-Level Attacks</span><span class="cv-inst">, Worcester Polytechnic Institute, MA, USA</span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Organizer: Shahin Tajik</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Dark Powers of Reconfigurable Logic</span><span class="cv-inst">, High-Tech Women Event, Darmstadt, Germany <a href="https://hightechwomen.org/htw-23/" class="cv-link l-link">Link</a></span><span class="cv-date"> (2023)</span>
+                </div>
+                <div class="cv-desc">Organizers: Lejla Batina, Nele Mentens, and Ahmad-Reza Sadeghi</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Hardware Trojans and Side-Channel Attacks</span><span class="cv-inst">, CYD Research Day</span><span class="cv-date"> (2021)</span>
+                </div>
+                <div class="cv-desc">Host: Vincent Lenders</div>
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Timing Violation-Induced Faults in Multi-Tenant FPGAs</span><span class="cv-inst">, Xi'an University, China</span><span class="cv-date"> (2019)</span>
+                </div>
+                <div class="cv-desc">Host: Wei Hu</div>
+            </div>
+            
+        </section>
+        
+        <section id="Conference-and-Workshop-Organization">
+            <h2>Conference and Workshop Organization</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Vice General Chair</span><span class="cv-inst">, HEART</span><span class="cv-date"> (2026)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Publicity Chair</span><span class="cv-inst">, FPL</span><span class="cv-date"> (2026)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Program Co-Chair</span><span class="cv-inst">, FPL</span><span class="cv-date"> (2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Special Session Co-organizer</span><span class="cv-inst">, ASAP, Reconfigurable Edge Computing</span><span class="cv-date"> (2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Track Chair and Co-Chair</span><span class="cv-inst">, DATE, Track A3: Secure Systems, Circuits and Architectures</span><span class="cv-date"> (2024–2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Program Co-Chair</span><span class="cv-inst">, ARC</span><span class="cv-date"> (2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Publicity Co-Chair</span><span class="cv-inst">, HEART</span><span class="cv-date"> (2024)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Topic Chair</span><span class="cv-inst">, DDECS, Secure HW and Embedded Systems</span><span class="cv-date"> (2023, 2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Co-organizer</span><span class="cv-inst">, DAC, Tutorial: Secure Sharing of FPGAs in the Cloud</span><span class="cv-date"> (2022)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Co-organizer</span><span class="cv-inst">, Workshop on Security for Custom Computing Machines (SCCM)</span><span class="cv-date"> (2022–2023, 2025)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Track Chair</span><span class="cv-inst">, VLSID, Track: Architectures</span><span class="cv-date"> (2022)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Co-organizer</span><span class="cv-inst">, DATE, Special Session: When FPGA Turns Against You: Side-channel and Fault Attacks in Sha FPGAs</span><span class="cv-date"> (2021)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">PhD Forum Chair</span><span class="cv-inst">, FPL</span><span class="cv-date"> (2016)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Demo Night Chair</span><span class="cv-inst">, FPL</span><span class="cv-date"> (2016)</span>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="Editorial-Service-and-Reviewing">
+            <h2>Editorial Service and Reviewing</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Associate Editor</span><span class="cv-inst">, IEEE Transactions on Emerging Topics in Computing</span><span class="cv-date"> (2026–ongoing)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Associate Editor</span><span class="cv-inst">, ACM Transactions on Reconfigurable Technology and Systems</span><span class="cv-date"> (2022–ongoing)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Associate Editor</span><span class="cv-inst">, IEEE Embedded Systems Letters</span><span class="cv-date"> (2022–2024)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Program Committee Member</span><span class="cv-inst">, TCHES [2026], DAC [2025–ongoing]; DATE [2023–ongoing]; FPGA [2021–ongoing], FCCM [2020–2023], FPL [2017–ongoing], OPTIMIST [2024–2025]; MAL-IoT [2019–2021, 2023, 2025]; ASAP [2022]; DDECS [2023], RAW [2020], VLSID [2022]</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Journal Reviewing</span><span class="cv-inst">, IEEE TCAD; IEEE TVLSI; IEEE TEMC; IEEE TC; IEEE TPDS; IEEE Access; ACM TRETS; ACM Computing Surveys; IET Circuits, Devices & Systems</span>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="Departmental-Service">
+            <h2>Departmental Service</h2>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Bourses d'Excellence Committee Member</span><span class="cv-date"> (2025–2026)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Presentation of BSc Programs in IC at Information Days for Bachelor of Science</span><span class="cv-date"> (2026)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Academic Program Coordinator for Study Trip, Barcelona, Spain</span><span class="cv-date"> (2024)</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">Candidacy Exam Committee Member</span><span class="cv-inst">, Lin Qunyou [2023], Mingfei Yu [2023]</span>
+                </div>
+                
+            </div>
+            
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role"></span><span class="cv-inst">, Participation in the EDIC Open House, faculty candidate interviews, and curriculum development for the computer architecture and systems group</span>
+                </div>
+                
+            </div>
+            
+        </section>
+        
 
         <section id="publications">
             <h2>Publications</h2>
 
-            {% if site.data.publications.conferences %}
+            
             <h3 id="conferences">Conferences</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.conferences %}
+            
             <div class="pub-item">
-                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-title">Out With LSQs: Custom Circuits for Memory Access Reordering in Dynamic HLS</div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
-                    {% endif %}
+                    Rouzbeh Pirayadi, Ayatallah Elakhras, <strong>Mirjana Stojilović</strong>, Paolo Ienne. Proceedings of the ACM/SIGDA International Symposium on Field-Programmable Gate Arrays, 2026
+                    
+                    <a href="https://doi.org/10.1145/3748173.3779204" class="cv-link l-doi">DOI</a>
+                    
                 </div>
-                {% if p.award %}
+                
                 <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
+                    🏆 Best Paper Award (Runner Up)
+                    
                 </div>
-                {% endif %}
-                {% if p.note and 'http' not in p.note %}
-                    {% set note_l = p.note | lower %}
-                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                    {% else %}
-                    <div class="pub-note">{{ p.note | safe }}</div>
-                    {% endif %}
-                {% endif %}
+                
+                
             </div>
-            {% endfor %}
+            
+            <div class="pub-item">
+                <div class="pub-title">ROBoost: A Study of FPGA Logic-Based Power-Wasting Primitives</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, Simone Andreani, Vincent Lenders, <strong>Mirjana Stojilović</strong>. Proceedings of the Applied Reconfigurable Computing (ARC), 2025
+                    
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-87995-1_6" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
             </div>
-            {% endif %}
+            
+            <div class="pub-item">
+                <div class="pub-title">Guaranteed Yet Hard to Find: Uncovering FPGA Routing Convergence Paradox</div>
+                <div class="pub-meta">
+                    Shashwat Shrivastava, Stefan Nikolić, Sun Tanaka, Chirag Ravishankar, Dinesh Gaitonde, <strong>Mirjana Stojilović</strong>. Proceedings of the IEEE Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM), 2025
+                    
+                    <a href="https://doi.org/10.1109/FCCM62733.2025.00060" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">FRIDA: Reconfigurable Arrays for Dynamically Scheduled High-Level Synthesis</div>
+                <div class="pub-meta">
+                    Louis Coulon, Lucas Ramirez, Jason Anderson, <strong>Mirjana Stojilović</strong>, Paolo Ienne. Proceedings of the ACM/SIGDA International Symposium on Field-Programmable Gate Arrays, 2025
+                    
+                    <a href="https://doi.org/10.1145/3706628.3708880" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">FRESCO: Efficient Subgraph Enumeration for Scalable Clustering in Heterogeneous CGRAs</div>
+                <div class="pub-meta">
+                    Louis Coulon, Adham Ragab, Jason Anderson, <strong>Mirjana Stojilović</strong>, Paolo Ienne. Proceedings of the IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2025
+                    
+                    <a href="https://doi.org/10.1109/ICCAD66269.2025.11240852" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Parallel FPGA Routing With On-The-Fly Net Decomposition</div>
+                <div class="pub-meta">
+                    Fahriçan Kosar, <strong>Mirjana Stojilović</strong>, Vaughn Betz. Proceedings of the International Conference on Field-Programmable Technology (ICFPT), 2024
+                    
+                    <a href="https://doi.org/10.1109/ICFPT64416.2024.11113423" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award Nominee
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Multiqueue-Based FPGA Routing: Relaxed A* Priority Ordering for Improved Parallelism</div>
+                <div class="pub-meta">
+                    Alexandre Singer, Hang Yan, Guozheng Zhang, Mark C. Jeffrey, <strong>Mirjana Stojilović</strong>, Vaughn Betz. Proceedings of the International Conference on Field-Programmable Technology (ICFPT), 2024
+                    
+                    <a href="https://doi.org/10.1109/ICFPT64416.2024.11113444" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award Nominee
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Temperature Impact on Remote Power Side-Channel Attacks on Shared FPGAs</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Hajira Bazaz, Mathias Payer, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2023
+                    
+                    <a href="https://doi.org/10.23919/DATE56975.2023.10136979" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Active Wire Fences for Multitenant FPGAs</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Anj̣ela Kostić, Staša Kostić, <strong>Mirjana Stojilović</strong>. Proceedings of the International Symposium on Design and Diagnostics of Electronic Circuits and Systems (DDECS), 2023
+                    
+                    <a href="https://doi.org/10.1109/DDECS57882.2023.10138941" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award Nominee
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">GRAMM: Fast CGRA Application Mapping Based on a Heuristic for Finding Graph Minors</div>
+                <div class="pub-meta">
+                    Guanglei Zhou, <strong>Mirjana Stojilović</strong>, Jason H. Anderson. Proceedings of the International Conference on Field-Programmable Logic and Applications (FPL), 2023
+                    
+                    <a href="https://doi.org/10.1109/FPL60245.2023.00052" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">IIBLAST: Speeding Up Commercial FPGA Routing by Decoupling and Mitigating the Intra-CLB Bottleneck</div>
+                <div class="pub-meta">
+                    Shashwat Shrivastava, Stefan Nikolić, Chirag Ravishankar, Dinesh Gaitonde, <strong>Mirjana Stojilović</strong>. Proceedings of the IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2023
+                    
+                    <a href="https://doi.org/10.1109/ICCAD57390.2023.10323897" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Deep-Learning Approach to Side-Channel Based CPU Disassembly at Design Time</div>
+                <div class="pub-meta">
+                    Hedi Fendri, Marco Macchetti, Jérôme Perrine, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2022
+                    
+                    <a href="https://doi.org/10.23919/DATE54114.2022.9774531" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">FPGA-to-CPU Undervolting Attacks</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, Samah Hussein, Vincent Lenders, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2022
+                    
+                    <a href="https://doi.org/10.23919/DATE54114.2022.9774663" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Shared FPGAs and the Holy Grail: Protections Against Side-Channel and Fault Attacks</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Dina G. Mahmoud, Francesco Regazzoni, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2021
+                    
+                    <a href="https://doi.org/10.23919/DATE51398.2021.9473947" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">NetCracker: A Peek Into the Routing Architecture of Xilinx 7-Series FPGAs</div>
+                <div class="pub-meta">
+                    Morten B. Petersen, Stefan Nikolić, <strong>Mirjana Stojilović</strong>. Proceedings of the ACM/SIGDA International Symposium on Field-Programmable Gate Arrays, 2021
+                    
+                    <a href="https://doi.org/10.1145/3431920.3439285" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Deep Learning Detection of GPS Spoofing</div>
+                <div class="pub-meta">
+                    Olivia Jullian, Beatriz Otero, <strong>Mirjana Stojilović</strong>, Juan José Costa, Javier Verdú, Manuel Alejandro Pajuelo. Proceedings of the Machine Learning, Optimization, and Data Science (LOD), 2021
+                    
+                    <a href="https://doi.org/10.1007/978-3-030-95467-3_38" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Are Cloud FPGAs Really Vulnerable to Power Analysis Attacks?</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Louis Coulon, Francesco Regazzoni, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2020
+                    
+                    <a href="https://doi.org/10.23919/DATE48585.2020.9116481" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Closing Leaks: Routing Against Crosstalk Side-Channel Attacks</div>
+                <div class="pub-meta">
+                    Zeinab Seifoori, Seyedeh Sharareh Mirzargar, <strong>Mirjana Stojilović</strong>. Proceedings of the ACM/SIGDA International Symposium on Field-Programmable Gate Arrays, 2020
+                    
+                    <a href="https://doi.org/10.1145/3373087.3375319" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Built-In Self-Evaluation of First-Order Power Side-Channel Leakage for FPGAs</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Louis Coulon, Francesco Regazzoni, <strong>Mirjana Stojilović</strong>. Proceedings of the ACM/SIGDA International Symposium on Field- Programmable Gate Arrays, 2020
+                    
+                    <a href="https://doi.org/10.1145/3373087.3375318" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">X-Attack: Remote Activation of Satisfiability Don't-Care Hardware Trojans on Shared FPGAs</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, Wei Hu, <strong>Mirjana Stojilović</strong>. Proceedings of the International Conference on Field-Programmable Logic and Applications (FPL), 2020
+                    
+                    <a href="https://doi.org/10.1109/FPL50879.2020.00039" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Nonintrusive and Adaptive Monitoring for Locating Voltage Attacks in Virtualized FPGAs</div>
+                <div class="pub-meta">
+                    Seyedeh Sharareh Mirzargar, Gaiëtan Renault, Andrea Guerrieri, <strong>Mirjana Stojilović</strong>. Proceedings of the International Conference on Field-Programmable Technology (ICFPT), 2020
+                    
+                    <a href="https://doi.org/10.1109/ICFPT51103.2020.00050" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Shared-Memory Parallel Implementation of the RePlAce Global Cell Placer</div>
+                <div class="pub-meta">
+                    Frédéric Gessler, Philip Brisk, <strong>Mirjana Stojilović</strong>. 33rd International Conference on VLSI Design, 2020
+                    
+                    <a href="https://doi.org/10.1109/VLSID49098.2020.00031" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Timing Violation Induced Faults in Multi-Tenant FPGAs</div>
+                <div class="pub-meta">
+                    Dina Mahmoud, <strong>Mirjana Stojilović</strong>. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2019
+                    
+                    <a href="https://doi.org/10.23919/DATE.2019.8715263" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Physical Side-Channel Attacks and Covert Communication on FPGAs: A Survey</div>
+                <div class="pub-meta">
+                    Seyedeh Sharareh Mirzargar, <strong>Mirjana Stojilović</strong>. Proceedings of the International Conference on Field-Programmable Logic and Applications (FPL), 2019
+                    
+                    <a href="https://doi.org/10.1109/FPL.2019.00039" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Machine Learning Approach for Power Gating the FPGA Routing Network</div>
+                <div class="pub-meta">
+                    Zeinab Seifoori, Hossein Asadi, <strong>Mirjana Stojilović</strong>. Proceedings of the International Conference on Field-Programmable Technology (ICFPT), 2019
+                    
+                    <a href="https://doi.org/10.1109/ICFPT47387.2019.00010" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award Nominee
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">FPGA-Assisted Deterministic Routing for FPGAs</div>
+                <div class="pub-meta">
+                    Dario Korolija, <strong>Mirjana Stojilović</strong>. Proceedings of the IEEE International Parallel and Distributed Processing Symposium Workshops, 2019
+                    
+                    <a href="https://doi.org/10.1109/IPDPSW.2019.00034" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Deterministic Parallel Routing for FPGAs Based on Galois Parallel Execution Model</div>
+                <div class="pub-meta">
+                    Yehdhih Ould Mohammed Moctar, <strong>Mirjana Stojilović</strong>, Philip Brisk. Proceedings of the International Conference on Field-Programmable Logic and Applications (FPL), 2018
+                    
+                    <a href="https://doi.org/10.1109/FPL.2018.00011" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Parallel FPGA Routing: Survey and Challenges</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>. Proceedings of the International Conference on Field-Programmable Logic and Applications (FPL), 2017
+                    
+                    <a href="https://doi.org/10.23919/FPL.2017.8056782" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Comparator-Based Technique for Identification of Intentional Electromagnetic Interference Attacks</div>
+                <div class="pub-meta">
+                    D. Recordon, M. Rubinstein, <strong>Mirjana Stojilović</strong>, N. Mora, G. Lugrin, F. Rachidi, L. Rouiller, W. Hirschi, S. Sliman. Proceedings of the International Symposium on Electromagnetic Compatibility, 2014
+                    
+                    <a href="https://doi.org/10.1109/EMCEurope.2014.6931097" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Effects of Mounting Pads and Length Imbalance on Performance of Fast Differential Interconnects</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Nikola Nenadić, Antonije Djordjević. Proceedings of the European Conference on Circuits and Systems for Communications (ECCSC), 2010
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Performance Analysis of Space-Vector Modulated Two- and Three-Level Inverters</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Predrag Pejović. Proceedings of the Telecommunications Forum (TELFOR), 2012
+                    
+                    <a href="https://doi.org/10.1109/TELFOR.2012.6419397" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">802.11b Small-Signal Amplifier Based on the BFG25A/X</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Milan Ilić. Proceedings of the Telecommunications Forum (TELFOR), 2012
+                    
+                    <a href="https://doi.org/10.1109/TELFOR.2012.6419407" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Selective Flexibility: Breaking the Rigidity of Datapath Merging</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, David Novo, Lazar Saranovac, Philip Brisk, Paolo Ienne. Proceedings of the Design, Automation & Test in Europe Conference & Exhibition (DATE), 2012
+                    
+                    <a href="https://doi.org/10.1109/DATE.2012.6176718" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">TDoA-Based Localisation of Radiated IEMI Sources</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Benjamin Menssen, Ian Flintoft, Heyno Garbe, John Dawson, Marcos Rubinstein. Proceedings of the International Symposium on Electromagnetic Compatibility, 2014
+                    
+                    <a href="https://doi.org/10.1109/EMCEurope.2014.6931098" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Design of Antenna System for Short-Range Wireless Sensor Network</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Nenad Antonić, Antonije Djordjević. Proceedings of the Telecommunications Forum (TELFOR), 2011
+                    
+                    <a href="https://doi.org/10.1109/TELFOR.2011.6143705" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Blažo Mirčevski Award
+                    
+                    <a href="https://mircevski.rs/winners/" class="cv-link l-award">Award</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Cost-Efficient System for Detecting an Intentional Electromagnetic Interference (IEMI) Attack</div>
+                <div class="pub-meta">
+                    J. F. Dawson, I. D. Flintoft, P. Kortoci, Linda Dawson, A. C. Marvin, M. P. Robinson, <strong>Mirjana Stojilović</strong>, Marcos Rubinstein, Benjamin Menssen, Heyno Garbe. Proceedings of the International Symposium on Electromagnetic Compatibility, 2014
+                    
+                    <a href="https://doi.org/10.1109/EMCEurope.2014.6931096" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Analysis of Switching Noise on Power Planes</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Antonije R. Djordjević. Proceedings of the Telecommunications Forum (TELFOR), 2008
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Evaluation of the Electric-Field Transfer Functions Between IEMI Sources and Banking IT Equipment</div>
+                <div class="pub-meta">
+                    Simon Runke, Markus Clemens, <strong>Mirjana Stojilović</strong>, Sana Sliman, Marcos Rubinstein, Nicolas Mora, Farhad Rachidi. Proceedings of the International Symposium on Electromagnetic Compatibility (EMC), 2015
+                    
+                    <a href="https://doi.org/10.1109/ISEMC.2015.7256367" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">The European Project STRUCTURES: Challenges and Results</div>
+                <div class="pub-meta">
+                    Stefan Van de Beek, John Dawson, Linda Dawson, Ian Flintoft, Heyno Garbe, Frank Leferink, Benjamin Menssen, Nicolas Mora, Farhad Rachidi, Marco Righero. Proceedings of the International Symposium on Electromagnetic Compatibility (EMC), 2015
+                    
+                    <a href="https://doi.org/10.1109/ISEMC.2015.7256321" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Best Paper Award
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Influence of LLS Detection Efficiency on the Measured Distribution of Interstroke Intervals</div>
+                <div class="pub-meta">
+                    Mohammad Azadifar, <strong>Mirjana Stojilović</strong>, Marcos Rubinstein, Farhad Rachidi. Proceedings of the American Electromagnetics International Symposium (AMEREM), 2014
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Lightning Location Systems and Interstroke Intervals: Effects of Imperfect Detection Efficiency</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Mohammad Azadifar, Marcos Rubinstein, Farhad Rachidi. Proceedings of the International Conference on Lightning Protection (ICLP), 2016
+                    
+                    <a href="https://doi.org/10.1109/ICLP.2016.7791370" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                <div class="pub-note pub-award">
+                    🏆 Young Scientist Award
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Protection Strategy Against IEMI for Wireless Communication Infrastructures</div>
+                <div class="pub-meta">
+                    Stefan Van de Beek, <strong>Mirjana Stojilović</strong>, Nicolas Mora, Marcos Rubinstein, Farhad Rachidi-Haeri, Frank Leferink. Proceedings of the International Symposium on Electromagnetic Compatibility (EMC EUROPE), 2016
+                    
+                    <a href="https://doi.org/10.1109/EMCEurope.2016.7739189" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Development of a Lightning Location System Based on Electromagnetic Time Reversal: Technical Challenges and Expected Gain</div>
+                <div class="pub-meta">
+                    Marcos Rubinstein, Farhad Rachidi, <strong>Mirjana Stojilović</strong>. Proceedings of the International Lightning Detection Conference (ILDC), 2018
+                    
+                </div>
+                
+                
+            </div>
+            
+            </div>
+            
 
-            {% if site.data.publications.journals %}
+            
             <h3 id="journal-articles">Journal Articles</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.journals %}
+            
             <div class="pub-item">
-                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-title">X-Attack 2.0: The Risk of Power Wasters and Satisfiability Don't-Care Hardware Trojans to Shared Cloud FPGAs</div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
-                    {% endif %}
+                    Dina G. Mahmoud, Beatrice Shokry, Vincent Lenders, Wei Hu, <strong>Mirjana Stojilović</strong>. IEEE Access, 2024
+                    
+                    <a href="https://doi.org/10.1109/ACCESS.2024.3353134" class="cv-link l-doi">DOI</a>
+                    
                 </div>
-                {% if p.award %}
-                <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Electrical-Level Attacks on CPUs, FPGAs, and GPUs: Survey and Implications in the Heterogeneous Era</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, Vincent Lenders, <strong>Mirjana Stojilović</strong>. ACM Computing Surveys, 2023
+                    
+                    <a href="https://doi.org/10.1145/3498337" class="cv-link l-doi">DOI</a>
+                    
                 </div>
-                {% endif %}
-                {% if p.note and 'http' not in p.note %}
-                    {% set note_l = p.note | lower %}
-                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                    {% else %}
-                    <div class="pub-note">{{ p.note | safe }}</div>
-                    {% endif %}
-                {% endif %}
+                
+                
             </div>
-            {% endfor %}
+            
+            <div class="pub-item">
+                <div class="pub-title">The Side-Channel Metrics Cheat Sheet</div>
+                <div class="pub-meta">
+                    Kostas Papagiannopoulos, Ognjen Glamočanin, Melissa Azouaoui, Dorian Ros, Francesco Regazzoni, <strong>Mirjana Stojilović</strong>. ACM Computing Surveys, 2023
+                    
+                    <a href="https://doi.org/10.1145/3565571" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
             </div>
-            {% endif %}
+            
+            <div class="pub-item">
+                <div class="pub-title">Instruction-Level Power Side-Channel Leakage Evaluation of Soft-Core CPUs on Shared FPGAs</div>
+                <div class="pub-meta">
+                    Ognjen Glamočanin, Shashwat Shrivastava, Jinwei Yao, Nour Ardo, Mathias Payer, <strong>Mirjana Stojilović</strong>. Journal of Hardware and Systems Security, 2023
+                    
+                    <a href="https://doi.org/10.1007/S41635-023-00135-1" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">A Visionary Look at the Security of Reconfigurable Cloud Computing</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Kasper Rasmussen, Francesco Regazzoni, Mehdi B. Tahoori, Russell Tessier. Proceedings of the IEEE, 2023
+                    
+                    <a href="https://doi.org/10.1109/JPROC.2023.3330729" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">RDS: FPGA Routing Delay Sensors for Effective Remote Power Analysis Attacks</div>
+                <div class="pub-meta">
+                    David Spielmann, Ognjen Glamočanin, <strong>Mirjana Stojilović</strong>. IACR Transactions on Cryptographic Hardware and Embedded Systems, 2023
+                    
+                    <a href="https://doi.org/10.46586/TCHES.V2023.I2.543-567" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">DFAulted: Analyzing and Exploiting CPU Software Faults Caused by FPGA-Driven Undervolting Attacks</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, David Dervishi, Samah Hussein, Vincent Lenders, <strong>Mirjana Stojilović</strong>. IEEE Access, 2022
+                    
+                    <a href="https://doi.org/10.1109/ACCESS.2022.3231753" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Shrinking FPGA Static Power via Machine Learning-Based Power Gating and Enhanced Routing</div>
+                <div class="pub-meta">
+                    Zeinab Seifoori, Hossein Asadi, <strong>Mirjana Stojilović</strong>. IEEE Access, 2021
+                    
+                    <a href="https://doi.org/10.1109/ACCESS.2021.3085005" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Selective Flexibility: Creating Domain-Specific Reconfigurable Arrays</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, David Novo, Lazar Saranovac, Philip Brisk, Paolo Ienne. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2013
+                    
+                    <a href="https://doi.org/10.1109/TCAD.2012.2235127" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Closed-Form Formulas for Frequency-Dependent Per-Unit-Length Inductance and Resistance of Microstrip Transmission Lines That Provide Causal Response</div>
+                <div class="pub-meta">
+                    Antonije R. Djordjević, <strong>Mirjana Stojilović</strong>, Tapan K. Sarkar. IEEE Transactions on Electromagnetic Compatibility, 2014
+                    
+                    <a href="https://doi.org/10.1109/TEMC.2014.2327052" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Quasi-Impulse Response of Frequency-Periodic Microwave Networks</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>, Marcos Rubinstein, Antonije R. Djordjević. IEEE Transactions on Electromagnetic Compatibility, 2016
+                    
+                    <a href="https://doi.org/10.1109/TEMC.2015.2513009" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Causal Models of Electrically Large and Lossy Dielectric Bodies</div>
+                <div class="pub-meta">
+                    Antonije Djordjević, Dragan Olćan, <strong>Mirjana Stojilović</strong>, Miloš Pavlović, Branko Kolundžija, Dejan Tošić. Facta Universitatis-Series: Electronics and Energetics, 2014
+                    
+                    <a href="https://doi.org/DOI: 10.2298/FUEE1402221D" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Remote Electrical-Level Attacks on Cloud FPGAs: The Role of AI</div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>. Dagstuhl Reports, Special Issue: Intelligent Security (Eds. N. Mentens, S. Picek, and A.-R. Sadeghi), 2023
+                    
+                    <a href="https://doi.org/10.4230/DagRep.12.10.106" class="cv-link l-doi">DOI</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            </div>
+            
 
-            {% if site.data.publications.book_chapters %}
+            
             <h3 id="book-chapters">Book Chapters</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.book_chapters %}
+            
             <div class="pub-item">
-                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-title">Practical Implementations of Remote Power Side-Channel and Fault-Injection Attacks on Multitenant FPGAs</div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
-                    {% endif %}
+                    Jakub Szefer, Russel Tessier. Security of FPGA-Accelerated Cloud Computing Environments, 2024
+                    
                 </div>
-                {% if p.award %}
-                <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
+                
+                
+                    
+                    
+                    <div class="pub-note">DOI: 10.1007/978-3-031-45395-3_5</div>
+                    
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Students' Perception of IT Curricula and Career Opportunities in Serbia and Macedonia</div>
+                <div class="pub-meta">
+                    Béraud, André
+and Godfroy, Anne-Sophie
+and Michel, Jean. GIEE 2011: Gender and Interdisciplinary Education for Engineers: Formation Interdisciplinaire des Ingénieurs et Probléme du Genre, 2012
+                    
                 </div>
-                {% endif %}
-                {% if p.note and 'http' not in p.note %}
-                    {% set note_l = p.note | lower %}
-                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                    {% else %}
-                    <div class="pub-note">{{ p.note | safe }}</div>
-                    {% endif %}
-                {% endif %}
+                
+                
+                    
+                    
+                    <div class="pub-note">DOI: 10.1007/978-94-6091-982-4_18</div>
+                    
+                
             </div>
-            {% endfor %}
+            
             </div>
-            {% endif %}
+            
 
-            {% if site.data.publications.artifacts %}
+            
             <h3 id="data-and-artifacts">Data and Artifacts</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.artifacts %}
+            
             <div class="pub-item">
-                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-title">Instruction-Level Power Side-Channel Leakage Evaluation of Soft-Core CPUs on Shared FPGAs - Artifacts</div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">Artifacts</a>
-                    {% endif %}
+                    Ognjen Glamočanin, Shashwat Shrivastava, Jinwei Yao, Nour Ardo, Mathias Payer, <strong>Mirjana Stojilović</strong>. Zenodo, 2023
+                    
+                    <a href="https://doi.org/10.5281/ZENODO.8289077" class="cv-link l-doi">Artifacts</a>
+                    
                 </div>
-                {% if p.award %}
-                <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">RDS: FPGA Routing Delay Sensors for Effective Remote Power Analysis Attacks - Artifacts</div>
+                <div class="pub-meta">
+                    David Spielmann, Ognjen Glamočanin, <strong>Mirjana Stojilović</strong>. Zenodo, 2023
+                    
+                    <a href="https://doi.org/10.5281/zenodo.7534002" class="cv-link l-doi">Artifacts</a>
+                    
                 </div>
-                {% endif %}
-                {% if p.note and 'http' not in p.note %}
-                    {% set note_l = p.note | lower %}
-                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                    {% else %}
-                    <div class="pub-note">{{ p.note | safe }}</div>
-                    {% endif %}
-                {% endif %}
+                
+                
             </div>
-            {% endfor %}
+            
+            <div class="pub-item">
+                <div class="pub-title">IIBLAST: Speeding Up Commercial FPGA Routing by Decoupling and Mitigating the Intra-CLB Bottleneck - Artifacts</div>
+                <div class="pub-meta">
+                    Shashwat Shrivastava, Stefan Nikolić, Chirag Ravishankar, Dinesh Gaitonde, <strong>Mirjana Stojilović</strong>. Zenodo, 2023
+                    
+                    <a href="https://doi.org/10.5281/zenodo.8306001" class="cv-link l-doi">Artifacts</a>
+                    
+                </div>
+                
+                
             </div>
-            {% endif %}
+            
+            <div class="pub-item">
+                <div class="pub-title">MetriSCA</div>
+                <div class="pub-meta">
+                    Dorian Ros, Ognjen Glamočanin, <strong>Mirjana Stojilović</strong>. Zenodo, 2021
+                    
+                    <a href="https://doi.org/10.5281/zenodo.5778947" class="cv-link l-doi">Artifacts</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">ROBoost: A Study of FPGA Logic-Based Power-Wasting Primitives - Artifacts</div>
+                <div class="pub-meta">
+                    Dina G. Mahmoud, Simone Andreani, Vincent Lenders, <strong>Mirjana Stojilović</strong>, 2025
+                    
+                    <a href="https://doi.org/10.5281/zenodo.14840696" class="cv-link l-doi">Artifacts</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">Guaranteed Yet Hard to Find: Uncovering FPGA Routing Convergence Paradox - Artifacts</div>
+                <div class="pub-meta">
+                    Shashwat Shrivastava, Stefan Nikolić, Sun Tanaka, Chirag Ravishankar, Dinesh Gaitonde, <strong>Mirjana Stojilović</strong>, 2025
+                    
+                    <a href="https://doi.org/10.5281/zenodo.15024666" class="cv-link l-doi">Artifacts</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            </div>
+            
 
-            {% if site.data.publications.editorship %}
+            
             <h3 id="editorship">Editorship</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.editorship %}
+            
             <div class="pub-item">
-                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-title">Applied Reconfigurable Computing. Architectures, Tools, and Applications: 21st International Symposium (ARC 2025)</div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
-                    {% endif %}
+                    Roberto Giorgi, <strong>Mirjana Stojilović</strong>, Dirk Stroobandt, Piedad Brox Jiménez, Angel Barriga Barros, 2025
+                    
+                    <a href="https://doi.org/\url{10.1007/978-3-031-87995-1}" class="cv-link l-doi">DOI</a>
+                    
                 </div>
-                {% if p.award %}
-                <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
-                </div>
-                {% endif %}
-                {% if p.note and 'http' not in p.note %}
-                    {% set note_l = p.note | lower %}
-                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                    {% else %}
-                    <div class="pub-note">{{ p.note | safe }}</div>
-                    {% endif %}
-                {% endif %}
+                
+                
+                    
+                    
+                    <div class="pub-note">DOI: 10.1007/978-3-031-87995-1</div>
+                    
+                
             </div>
-            {% endfor %}
+            
             </div>
-            {% endif %}
+            
 
-            {% if site.data.publications.other %}
+            
             <h3 id="informal-and-other-publications">Informal and Other Publications</h3>
             <div class="pub-block">
-            {% for p in site.data.publications.other %}
+            
             <div class="pub-item">
                 <div class="pub-title">
-                    {% if 'thesis' in (p.venue or '') | lower or 'thesis' in (p.title or '') | lower %}
-                    <strong>{{ p.title }}</strong>
-                    {% else %}
-                    {{ p.title }}
-                    {% endif %}
+                    
+                    Nonintrusive and Adaptive Monitoring for Locating Voltage Attacks in Virtualized FPGAs
+                    
                 </div>
                 <div class="pub-meta">
-                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
-                    {% if p.doi %}
-                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
-                    {% endif %}
-                    {% if p.note and 'http' in p.note and not p.award %}
-                    <a href="{{ p.note }}" class="cv-link l-thesis">Thesis</a>
-                    {% endif %}
+                    Seyedeh Sharareh Mirzargar, Gaiëtan Renault, Andrea Guerrieri, <strong>Mirjana Stojilović</strong>. IACR Cryptology ePrint Archive, Paper 2020/1494, 2020
+                    
+                    
                 </div>
 
-                {% set note_l = (p.note or '') | lower %}
-                {% set award_l = (p.award or '') | lower %}
+                
+                
 
-                {% if p.award %}
-                <div class="pub-note pub-award">
-                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
-                    {% if p.note and 'http' in p.note %}
-                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
-                    {% endif %}
+                
+            </div>
+            
+            <div class="pub-item">
+                <div class="pub-title">
+                    
+                    CloudMoles: Surveillance of Power-Wasting Activities by Infiltrating Undercover Sensors
+                    
                 </div>
-                {% elif 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
-                <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
-                {% elif p.note and 'http' not in p.note %}
-                <div class="pub-note">{{ p.note | safe }}</div>
-                {% endif %}
+                <div class="pub-meta">
+                    Seyedeh Sharareh Mirzargar, Andrea Guerrieri, <strong>Mirjana Stojilović</strong>. IACR Cryptology ePrint Archive, Paper 2020/1495, 2020
+                    
+                    
+                </div>
+
+                
+                
+
+                
             </div>
-            {% endfor %}
+            
+            <div class="pub-item">
+                <div class="pub-title">
+                    
+                    A Method for Designing Domain-Specific Reconfigurable Arrays
+                    
+                </div>
+                <div class="pub-meta">
+                    <strong>Mirjana Stojilović</strong>. School of Electrical Engineering, University of Belgrade, Belgrade, Serbia, 2012
+                    
+                    
+                    <a href="https://hdl.handle.net/21.15107/rcub_nardus_6993" class="cv-link l-thesis">Thesis</a>
+                    
+                </div>
+
+                
+                
+
+                
             </div>
-            {% endif %}
+            
+            </div>
+            
         </section>
     </main>
 </body>
