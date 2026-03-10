@@ -1785,5 +1785,18 @@ and Michel, Jean. GIEE 2011: Gender and Interdisciplinary Education for Engineer
             
         </section>
     </main>
+	
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href]').forEach(function (link) {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+});
+</script>
+
 </body>
 </html>
