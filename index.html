@@ -1,318 +1,557 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Mirjana Stojilovic</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mirjana Stojilović | EPFL</title>
+    <style>
+        :root {
+            --text: #1a1a1a;
+            --muted: #5f5f5f;
+            --accent: #004499;
+            --line: #e6e6e6;
+            --bg: #ffffff;
+            --sidebar-w: 292px;
+            --award: #c92a2a;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            line-height: 1.24;
+            background: white;
+            font-size: 12.6px;
+        }
+        nav {
+            width: var(--sidebar-w);
+            height: 100vh;
+            position: fixed;
+            background: var(--bg);
+            padding: 1.1rem 1rem;
+            border-right: 1px solid var(--line);
+            overflow-y: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-main {
+            flex: 1 1 auto;
+        }
+        .profile-img {
+            width: 112px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 0 0.75rem 0;
+        }
+        nav h1 {
+            font-size: 1.22rem;
+            line-height: 1.12;
+            margin: 0 0 0.18rem 0;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .affiliation {
+            color: var(--muted);
+            font-size: 0.84rem;
+            margin-bottom: 0.8rem;
+        }
+        .toc-label {
+            margin-top: 0.95rem;
+            margin-bottom: 0.4rem;
+            color: var(--accent);
+            font-size: 0.73rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .contact {
+            font-size: 0.82rem;
+            line-height: 1.34;
+            margin-bottom: 0.95rem;
+        }
+        .contact-row {
+            display: grid;
+            grid-template-columns: 1.2rem 1fr;
+            gap: 0.42rem;
+            align-items: start;
+            margin-bottom: 0.2rem;
+        }
+        .contact-icon {
+            color: var(--accent);
+            font-size: 0.86rem;
+            line-height: 1.1;
+            text-align: center;
+            transform: translateY(0.03rem);
+        }
+        .contact a,
+        nav a,
+        main a,
+        .pub-toc-toggle {
+            text-decoration: none;
+            color: var(--text);
+        }
+        .contact a:hover,
+        nav a:hover,
+        main a:hover,
+        .pub-toc-toggle:hover {
+            color: var(--accent);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+        nav li {
+            margin-bottom: 0.18rem;
+        }
+        .toc-link,
+        .pub-toc-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.55rem;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.12rem 0;
+            background: transparent;
+            border: 0;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+        .toc-link::after {
+            content: "↗";
+            color: #aaaaaa;
+            font-size: 0.68rem;
+        }
+        .pub-toc-toggle::after {
+            content: "▸";
+            color: var(--accent);
+            font-size: 0.7rem;
+            transition: transform 0.15s ease;
+        }
+        body.show-pub-toc .pub-toc-toggle::after {
+            transform: rotate(90deg);
+        }
+        .pub-subtoc {
+            display: none;
+            margin: 0.12rem 0 0.38rem 0.35rem;
+            padding-left: 0.5rem;
+            font-size: 0.76rem;
+        }
+        body.show-pub-toc .pub-subtoc {
+            display: block;
+        }
+        .pub-subtoc li {
+            margin-bottom: 0.08rem;
+        }
+        .pub-subtoc a {
+            color: var(--muted);
+        }
+        .pub-subtoc a:hover {
+            color: var(--accent);
+        }
+        .copyright {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+        main {
+            margin-left: var(--sidebar-w);
+            max-width: 1080px;
+            padding: 1.45rem 2.9rem 2rem 2.9rem;
+        }
+        h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--accent);
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 0.2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.46rem;
+            font-weight: 700;
+        }
+        h3 {
+            font-size: 0.86rem;
+            color: var(--accent);
+            margin-top: 0.68rem;
+            margin-bottom: 0.2rem;
+            font-weight: 700;
+        }
+        .bio {
+            max-width: 900px;
+            font-size: 0.94rem;
+            line-height: 1.38;
+            letter-spacing: 0.003em;
+            color: #2a2a2a;
+            margin-top: 0.06rem;
+        }
+        .cv-item {
+            display: block;
+            margin-bottom: 0.28rem;
+            font-size: 0.86rem;
+            padding-left: 0.38rem;
+        }
+        .cv-date {
+            display: inline;
+            color: var(--muted);
+            font-size: 0.76rem;
+            white-space: nowrap;
+        }
+        .cv-role {
+            font-weight: 700;
+        }
+        .cv-inst {
+            color: var(--muted);
+        }
+        .cv-desc {
+            margin-top: 0.02rem;
+        }
+        .cv-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 0.66rem;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 5px;
+            font-weight: 700;
+            background: #e7f5ff;
+            color: #1971c2;
+            border: 1px solid #a5d8ff;
+            vertical-align: baseline;
+        }
+        .l-award { background: #fff1f0; color: var(--award); border-color: #ffc9c9; }
+        .l-doi { background: #e7f5ff; color: #1971c2; border-color: #a5d8ff; }
+        .l-thesis { background: #f3f0ff; color: #6741d9; border-color: #d0bfff; }
+        .pub-block {
+            margin-left: 0.22rem;
+            padding-left: 0.48rem;
+        }
+        .pub-item {
+            margin-bottom: 0.24rem;
+            font-size: 0.85rem;
+        }
+        .pub-title {
+            font-weight: 700;
+        }
+        .pub-meta,
+        .pub-note {
+            color: var(--muted);
+        }
+        .pub-note {
+            margin-top: 0.03rem;
+            font-size: 0.78rem;
+        }
+        .pub-award {
+            color: var(--award);
+            font-weight: 600;
+        }
+        .pub-award .cv-link {
+            margin-left: 0.35rem;
+        }
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+            main {
+                margin-left: 0;
+                padding: 1.2rem 1.05rem 1.8rem 1.05rem;
+            }
+            .cv-item {
+                padding-left: 0.2rem;
+            }
+            .pub-block {
+                margin-left: 0.1rem;
+                padding-left: 0.22rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="sidebar-main">
+            <img src="profile.jpg" alt="Mirjana Stojilović" class="profile-img">
+            <h1>Mirjana Stojilović</h1>
+            <div class="affiliation">Scientist, EPFL</div>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>Mirjana Stojilović</strong> <br>
-					Scientist at <a href="http://parsa.epfl.ch/">PARSA</a>, <a href="https://www.epfl.ch/en/EPFL">EPFL</a>
-					</h1>
-				</div>
-			</header>
+            <div class="contact">
+                <div class="contact-row"><span class="contact-icon">✉</span><a href="mailto:mirjana.stojilovic@epfl.ch">mirjana.stojilovic@epfl.ch</a></div>
+                <div class="contact-row"><span class="contact-icon">⌂</span><a href="https://people.epfl.ch/mirjana.stojilovic">people.epfl.ch/mirjana.stojilovic</a></div>
+                <div class="contact-row"><span class="contact-icon">↗</span><a href="https://mirjanastojilovic.github.io/">mirjanastojilovic.github.io</a></div>
+                <div class="contact-row"><span class="contact-icon">⌘</span><a href="https://github.com/mirjanastojilovic">github.com/mirjanastojilovic</a></div>
+                <div class="contact-row"><span class="contact-icon">◎</span><a href="https://orcid.org/0000-0001-5649-5020">ORCID 0000-0001-5649-5020</a></div>
+                <div class="contact-row"><span class="contact-icon">≣</span><a href="https://dblp.org/pid/68/11156">DBLP profile</a></div>
+                <div class="contact-row"><span class="contact-icon">☆</span><a href="https://scholar.google.com/citations?user=SkpkQgAAAAJ">Google Scholar</a></div>
+            </div>
 
-		<!-- Main -->
-			<div id="main">
+            <div class="toc-label">Contents</div>
+            <ul>
+                <li><a class="toc-link" href="#about">Bio</a></li>
+                {% for sec in site.data.cv_content.sections %}
+                    <li><a class="toc-link" href="#{{ sec.title|replace(' ', '-') }}">{{ sec.title }}</a></li>
+                {% endfor %}
+                <li>
+                    <a class="pub-toc-toggle" href="#publications" onclick="document.body.classList.toggle('show-pub-toc');">Publications</a>
+                    <ul class="pub-subtoc">
+                        <li><a href="#conferences">Conferences</a></li>
+                        <li><a href="#journal-articles">Journal Articles</a></li>
+                        <li><a href="#book-chapters">Book Chapters</a></li>
+                        <li><a href="#data-and-artifacts">Data and Artifacts</a></li>
+                        <li><a href="#editorship">Editorship</a></li>
+                        <li><a href="#informal-and-other-publications">Informal and Other Publications</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>About Me</h2>
-						</header>
-						<p>After graduating from the School of Electrical Engineering in Belgrade in 2006, I worked for five years as embedded systems developer at the <a href="http://www.pupin.rs/en/home/">Institute Mihailo Pupin</a> in Belgrade. At the time, my research was closely linked to everyday issues I was facing when designing printed-circuit boards: signal integrity, transmission lines, antennas, RF amplifiers, and power plane resonances. In 2010 and 2011, I visited the Processor Architecture Laboratory (LAP) at EPFL, as part of the SNSF-SCOPES project “Advancing Embedded Systems Research in Serbia”. It was then that I started being interested in hardware acceleration using field-programmable gate arrays (FPGAs) and coarse-grain reconfigurable arrays (CGRAs). In 2013, I obtained a PhD degree at the School of Electrical Engineering in Belgrade with the thesis entitled "A method for designing domain-specific reconfigurable arrays". Beginning of 2013, I moved to Switzerland to pursue my research career by taking the post of a scientific collaborator at the University of Applied Sciences in Yverdon-les-Bains, where I worked on a European Union FP7-funded project STRUCTURES (Strategies for the Improvement of Critical Infrastructure Resilience to EM attacks). In October 2016, I joined the EPFL's School of Computer and Communication Sciences and the <a href="https://parsa.epfl.ch/">Parallel Systems Architecture Laboratory (PARSA)</a> as a scientific assistant, where I continue building my career in research and teaching.</p><p>
+        <div class="copyright">© Mirjana Stojilović</div>
+    </nav>
 
-						Today, my research interests span the areas of field-programmable technology, electronic design automation (EDA) and, more recently, electrical-level attacks and countermeasures for reconfigurable hardware. In EDA space, I work on methods for designing domain-specific reconfigurable arrays, on hardware and software acceleration of VLSI and FPGA placement and routing, on machine-learning approaches for reducing the leakage power of FPGAs and on the analysis and design of FPGA routing architectures.</p>
+    <main>
+        <section id="about">
+            <div class="bio">
+                {{ site.data.cv_content.bio | safe }}
+            </div>
+        </section>
 
-						<p>I serve on the program committees of the <a href="https://isfpga.org/">FPGA</a>, the <a href="https://www.fccm.org/">FCCM</a>, and the FPL conference, and review for IEEE TCAD, IEEE TVLSI, IEEE TC, IEEE TEMC, IEEE Access, IEEE TPDS, and ACM TRETS. I am a member of <a href="https://ecocloud.ch/">EcoCloud</a>, the EPFL center for sustainable cloud computing.
-						</p>
+        {% for sec in site.data.cv_content.sections %}
+        <section id="{{ sec.title|replace(' ', '-') }}">
+            <h2>{{ sec.title }}</h2>
+            {% for item in sec.entries %}
+            <div class="cv-item">
+                <div>
+                    <span class="cv-role">{{ item.role }}</span>{% if item.inst %}<span class="cv-inst">, {{ item.inst }}</span>{% endif %}{% if item.date %}<span class="cv-date"> ({{ item.date }})</span>{% endif %}
+                </div>
+                {% if item.desc %}<div class="cv-desc">{{ item.desc | replace('<p>, ', '<p>') | replace('<p>,', '<p>') | safe }}</div>{% endif %}
+            </div>
+            {% endfor %}
+        </section>
+        {% endfor %}
 
-						<p> I am a mother of Djordje and Lucia. We love travelling the world, making friends, and enjoying good food and movies.
-						</p>
-						<!-- <ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul> -->
-					</section>
+        <section id="publications">
+            <h2>Publications</h2>
 
-				<!-- Two -->
-				<section id="buttons">
-					<h2>Read More</h2>
-					<ul class="actions">
-						<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
-						<li>
-							
-							<!-- <a href="#talks" class="button">Talks</a> -->
-							<a href="#reserchgroup" class="button">Research Group</a>
-							<a href="#publications" class="button">Publications</a>
-							<a href="#awards" class="button">Awards</a>
-							<a href="#committees" class="button">Committees and Editorial Boards</a>
-							<a href="#workshop-tutorial" class="button">Workshops and Tutorials</a>
-							<a href="#projects" class="button">Projects</a>
-							<a href="#teaching" class="button">Teaching</a>
-							<!-- <a href="#artifacts" class="button">Research Artifacts</a> -->
-						</li>
-					</ul>
-				</section>
+            {% if site.data.publications.conferences %}
+            <h3 id="conferences">Conferences</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.conferences %}
+            <div class="pub-item">
+                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
+                    {% endif %}
+                </div>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if p.note and 'http' not in p.note %}
+                    {% set note_l = p.note | lower %}
+                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                    {% else %}
+                    <div class="pub-note">{{ p.note | safe }}</div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
 
-				<!-- PhD students -->
-				<section id="researchgroup">
-					<h2>Research Group</h2>
-					<h3>Current Students</h3>
-					<ul>
-						<li>
-							<a href="https://www.shashwatshrivastava.com/">Shashwat Shrivastava
-							</a>
-							: PhD student (started Fall 2021)
-						</li>
-						<li> 
-							<a href = "https://people.epfl.ch/louis.coulon">Louis Coulon
-							</a>
-							: PhD student (started Fall 2021, co-advised with Paolo Ienne)
-						</li>
-						<li> 
-							<a href = "https://dgm96.github.io/">Dina Mahmoud
-							</a>
-							: PhD student (started Fall 2019)
-						</li>
-						<li> 
-							David Dervishi
-							</a>
-							: MSc student (Fall 2023)
-						</li>
-					</ul>
-					<h3>Past Students</h3>
-					<li>
-						<a href="https://ogacns94.github.io/">Ognjen Glamočanin
-						</a>
-						: PhD student (Fall 2018<span>&#8211;</span>Summer 2023), currently <em> Hardware engineer at <a href = "https://syntharatechnologies.ch/">Synthara AG</a></em>
-					</li>
-					<li>
-						Hajira Bazaz
-						: Summer@EPFL intern (Summer 2022)
-					</li>
-					<li>
-						Beatrice Shokry
-						: Summer@EPFL intern (Summer 2022), currently <em> PhD student at EPFL</em>
-					</li>
-					<li>
-						Arman Soleimani
-						: Summer@EPFL intern (Summer 2022)
-					</li>
-					<li>
-						<a href="https://programming-group.com/members/spielmann">David Spielmann</a>
-						</a>
-						: MSc student (Fall 2022<span>&#8211;</span>Spring 2023), currently <em> PhD student at the Institute of Computer Science at the University of St. Gallen</em>
-					</li>
-					<li>
-						Samah Hussein
-						: Summer@EPFL intern (Summer 2021), currently <em> PhD student at EPFL</em>
-					</li>
-					<li>
-						Nour Ardo
-						: Summer@EPFL intern (Summer 2022)
-					</li>
-					<li>
-						Jinwei Yao
-						: Summer@EPFL intern (Summer 2022)
-					</li>
-					<li>
-						Hédi Fendri
-						</a>
-						: MSc student (2019<span>&#8211;</span>2020), recipient of the <a href="https://www.prix-omega.ch/en/prix-etudiant/">Omega Student Award</a>, currently <em> Data scientist at <a href="https://www.kudelski-iot.com/">Kudelski IoT</a></em>
-					</li>
-					<li>
-						Hamidreza Ramezani
-						: Summer@EPFL intern (Summer 2019)
-					</li>
-					<li>
-						Jacqueline Abalo
-						: Summer@EPFL intern (Summer 2018)
-					</li>
-					<li>
-						Dina G. Mahmoud
-						: Summer@EPFL intern (Summer 2018)
-					</li>
-					<li>
-						Radenko Pavlovic
-						: Summer@EPFL intern (Summer 2018)
-					</li>
-					<li>
-						<a href = "https://d-kor.github.io/">Dario Korolija
-						</a>
-						: MSc student (2017<span>&#8211;</span>2018), currently <em> PhD student at <a href="https://ethz.ch/en.html">ETHZ</a></em>
-					</li>
-					<li>
-						Mobin Yahyazadeh
-						: Summer@EPFL intern (Summer 2017)
-					</li>
-				</section>
-				
-				<!-- publications -->
-				<section id="publications">
-					<h2>Publications</h2>
-					<ul>
-						<li> 
-							<a href="https://goo.gl/WXgMq1">Google Scholar
-							</a>
-						</li>
-						<li> 
-							<a href = "https://dblp.uni-trier.de/search?q=mirjana%20stojilovic">dblp
-							</a>
-						</li>
-						<li> 
-							<a href = "https://parsa.epfl.ch/publications/">e-prints
-							</a>
-						</li>
-					</ul>
-				</section>
+            {% if site.data.publications.journals %}
+            <h3 id="journal-articles">Journal Articles</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.journals %}
+            <div class="pub-item">
+                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
+                    {% endif %}
+                </div>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if p.note and 'http' not in p.note %}
+                    {% set note_l = p.note | lower %}
+                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                    {% else %}
+                    <div class="pub-note">{{ p.note | safe }}</div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
 
-				<!-- awards -->
-				<section id="awards">
-					<h2>Awards</h2>
-					<ul>
-						<li>2023, Best paper award nomination, the International Symposium on Design and Diagnostics of Electronic Circuits and Systems (DDECS)</li>
-						<li>2020, I supervised the Master's project of Hédi Féndri, titled "ML-based side-channel analysis and disassembly of hardware Root-of-Trust", carried out in collaboration with Kudelski Group. Hédi received the prestigious OMEGA Student Award, which honors the best Master's projects completed by students of the Microengineering Section of the EPFL. <a href="https://ecocloud.ch/2020/11/23/hedi-fendri-wins-omega-prize-student-award/">More...</a></li>
-						<li>2019, Best paper award nomination, the International Conference on Field Programmable Technology (FPT)</li>
-						<li>2016, Young scientist award, the International Conference on Lightning Protection (ICLP)</li>
-						<li>2016, Best paper award, the International Symposium and exhibition on electromagnetic compatibility (EMC Europe)</li>
-						<li> 2015, Teaching Award, the EPFL School of Computer and Communication Sciences, for teaching excellence</li>
-						<li>2011, <a href="http://mircevski.rs/">Blažo Mirčevski Young author best paper award</a>, the 20th Telecommunication forum (TELFOR)</li>
-					</ul>
-				</section>
+            {% if site.data.publications.book_chapters %}
+            <h3 id="book-chapters">Book Chapters</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.book_chapters %}
+            <div class="pub-item">
+                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
+                    {% endif %}
+                </div>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if p.note and 'http' not in p.note %}
+                    {% set note_l = p.note | lower %}
+                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                    {% else %}
+                    <div class="pub-note">{{ p.note | safe }}</div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
 
-				<section id="committees">
-					<h2>Committees and Editorial Boards</h2>
-					<ul>
-						<li> 2024,
-							Program committee member, <a href="https://www.date-conference.com/">Design, Automation and Test in Europe (DATE)</a>,  DT5 - Design and test of hardware security primitives
-						</li>
-						<li> 2023,
-							Program committee member, <a href="https://www.date-conference.com/">Design, Automation and Test in Europe (DATE)</a>,  D12 - Reconfigurable systems
-						</li>
-						<li> 2023,
-							Topic chair - Secure HW and Embedded Systems, <a href="http://www.ddecs.org/">The International Symposium on Design and Diagnostics of Electronic Circuits and Systems (DDECS)</a>
-						</li>
-						<li>2023<span>&#8211;</span>,
-							Associate Editor, <a href="https://dl.acm.org/journal/trets">ACM Transactions on Reconfigurable Technology and Systems (TRETS)</a>
-						</li>
-						<li>2022<span>&#8211;</span>,
-							Associate Editor, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4563995">IEEE Embedded Systems Letters (ESL)</a>
-						</li>
-						<li>2022,
-							Program committee member, International Conference on Application-specific Systems, Architectures and Processors (ASAP)
-						</li>
-						<li>2022,
-							Track Chair - Architecture, Embedded and VLSI Design Conference (VLSID)
-						</li>
-						<li> 2021,
-							Best paper award committee member, International Symposium on Field-Programmable Gate Arrays (FPGA)
-						</li>
-						<li> 2021<span>&#8211;</span>,
-							Program committee member, International Symposium on Field-Programmable Gate Arrays (FPGA)
-						</li>
-						<li>2020<span>&#8211;</span>2023,
-							Program committee member, International Symposium on Field-Programmable Custom Computing Machines (FCCM)
-						</li>
-						<li>2017<span>&#8211;</span>,
-							Program committee member, International Conference on Field-Programmable Logic and Applications (FPL)
-						</li>
-						<li>2016,
-							PhD Forum and Demo-night chair, International Conference on Field-Programmable Logic and Applications (FPL)
-						</li>
-					</ul>
-				</section>
+            {% if site.data.publications.artifacts %}
+            <h3 id="data-and-artifacts">Data and Artifacts</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.artifacts %}
+            <div class="pub-item">
+                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">Artifacts</a>
+                    {% endif %}
+                </div>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if p.note and 'http' not in p.note %}
+                    {% set note_l = p.note | lower %}
+                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                    {% else %}
+                    <div class="pub-note">{{ p.note | safe }}</div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
 
-				<section id="workshop-tutorial">
-					<h2>Workshops and Tutorials</h2>
-					<ul>
-						<li> 2022,
-							Tutorial co-organizer, <i>Secure sharing of FPGAs in the Cloud: New challenges at the technology level</i>, Design Automation Conference (<a href = "https://www.dac.com/">DAC</a>)
-						</li>
-						<li> 2022<span>&#8211;</span>2023,
-							Co-organizer, 2nd Workshop on Security for Custom Computing Machines (<a href = "https://sccm-workshop.github.io/">SCCM</a>).
-						</li>
-						<li>2021,
-							Hot-Topic Session Co-Organizer, "When FPGA Turns Against You: Side-Channel and Fault Attacks in Shared FPGAs", Design, Automation and Test in Europe (<a href = "https://www.date-conference.com/">DATE</a>)
-						</li>
-					</ul>
-				</section>
+            {% if site.data.publications.editorship %}
+            <h3 id="editorship">Editorship</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.editorship %}
+            <div class="pub-item">
+                <div class="pub-title">{{ p.title }}</div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
+                    {% endif %}
+                </div>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if p.note and 'http' not in p.note %}
+                    {% set note_l = p.note | lower %}
+                    {% if 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                    <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                    {% else %}
+                    <div class="pub-note">{{ p.note | safe }}</div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
 
-				<!-- projects -->
-				<section id="projects">
-					<h2>Projects</h2>
-					<ul>
-						<li>2020<span>&#8211;</span>, 
-							<a href ="https://parsa.epfl.ch/adhes/">ADHeS: Attacks and defences on FPGA-CPU systems
-							</a>, supported by armasuisse Science and Technology
-						</li>
-						<li>2018<span>&#8211;</span>,
-							<a href="https://parsa.epfl.ch/secure_fpgas/">Secure FPGAs in the cloud
-							</a>, supported by the Swiss National Science Foundation
-						</li>
-						<li>2017<span>&#8211;</span>, 
-							<a href="https://parsa.epfl.ch/parallel_eda/">EDA for FPGAs
-							</a>
-						</li>
-					</ul>
-				</section>
+            {% if site.data.publications.other %}
+            <h3 id="informal-and-other-publications">Informal and Other Publications</h3>
+            <div class="pub-block">
+            {% for p in site.data.publications.other %}
+            <div class="pub-item">
+                <div class="pub-title">
+                    {% if 'thesis' in (p.venue or '') | lower or 'thesis' in (p.title or '') | lower %}
+                    <strong>{{ p.title }}</strong>
+                    {% else %}
+                    {{ p.title }}
+                    {% endif %}
+                </div>
+                <div class="pub-meta">
+                    {{ p.authors | replace('Mirjana Stojilović', '<strong>Mirjana Stojilović</strong>') | safe }}{% if p.venue %}. {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}
+                    {% if p.doi %}
+                    <a href="{% if 'http' in p.doi %}{{ p.doi }}{% else %}https://doi.org/{{ p.doi }}{% endif %}" class="cv-link l-doi">DOI</a>
+                    {% endif %}
+                    {% if p.note and 'http' in p.note and not p.award %}
+                    <a href="{{ p.note }}" class="cv-link l-thesis">Thesis</a>
+                    {% endif %}
+                </div>
 
-				<!-- Teaching -->
-				<section id="teaching">
-					<h2>Teaching</h2>
-					<ul>
-						<li>
-							Fundamentals of Digital Systems (2023<span>&#8211;</span>), <a href="cs173/index.html">CS-173</a>, BA2
-							</li>
-						<li>
-						Computer Architecture I (2016<span>&#8211;</span>2022), <a href="https://www.epfl.ch/schools/ic/">IC</a>, BA3
-						</li>
-						<li> Information, Computation, Communication (ICC) (2016<span>&#8211;</span>2022), <a href = "https://www.epfl.ch/education/bachelor/programs/mechanical-engineering/">Mechanical Engineering</a>, BA2
-						</li>
-						<li> Information, Computation, Communication (ICC) (2013<span>&#8211;</span>2022), <a href = "https://www.epfl.ch/education/bachelor/programs/chemistry-and-chemical-engineering/">Chemistry and Chemical Engineering Engineering</a>, BA2
-						</li>
-						<li> Information, Computation, Communication (ICC) (2013<span>&#8211;</span>2022), <a href = "https://www.epfl.ch/education/bachelor/programs/environmental-sciences-and-engineering/">Environmental Sciences and Engineering</a>, BA2
-						</li>
-						<li>
-						System Programming Project (2018<span>&#8211;</span>19, 2019<span>&#8211;</span>20), <a href="https://www.epfl.ch/schools/ic/">IC</a>, BA4
-					</li>
-					<p>For more information on teaching, including the semester and Master's projects, please visit my <a href="https://people.epfl.ch/mirjana.stojilovic?lang=en">EPFL web page</a>.</p>
-					</ul>
-				</section>
+                {% set note_l = (p.note or '') | lower %}
+                {% set award_l = (p.award or '') | lower %}
 
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://twitter.com/MirjanaStojilo1" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://github.com/mirjanastojilovic?tab=repositories" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/mirjana-stojilovi%C4%87-932b8b25/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="mailto:mirjana.stojilovic@epfl.ch" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Mirjana Stojilović, 2020<span>&#8211;</span>2022</li><li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+                {% if p.award %}
+                <div class="pub-note pub-award">
+                    🏆 {{ p.award | replace('http://', '') | replace('https://', '') | safe }}
+                    {% if p.note and 'http' in p.note %}
+                    <a href="{{ p.note }}" class="cv-link l-award">Award</a>
+                    {% endif %}
+                </div>
+                {% elif 'award' in note_l or 'best paper' in note_l or 'nominat' in note_l or 'finalist' in note_l or 'cyd phd thesis award' in note_l %}
+                <div class="pub-note pub-award">🏆 {{ p.note | safe }}</div>
+                {% elif p.note and 'http' not in p.note %}
+                <div class="pub-note">{{ p.note | safe }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+    </main>
+</body>
 </html>
